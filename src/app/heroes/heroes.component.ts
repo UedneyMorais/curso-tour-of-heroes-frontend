@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Hero } from '../model/hero';
 import { HeroService } from '../service/hero.service';
 
@@ -20,7 +21,8 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void{
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
+
   }
 
   onSelect(hero: Hero) : void {
